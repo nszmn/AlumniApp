@@ -4,8 +4,10 @@ package com.example.enes.alumniapp;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase;
 import android.content.Context;
+import android.telecom.Connection;
 
 public class AlumniDB extends SQLiteOpenHelper {
+    private Connection AlumniDB;
     private static final String AlumniDb ="AlumniDatabase";
     private static final int SURUM = 1;
 
