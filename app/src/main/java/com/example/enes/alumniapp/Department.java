@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.sql.SQLException;
-import java.
+
 
 
 public class Department {
@@ -37,14 +37,14 @@ public class Department {
     }
     public Objects displayMember;
     public Objects valueMember;
-    static Connection conn=new AlumniDB().connect();
+//    static Connection conn=new AlumniDB().connect();
     private Connection AlumniDB;
     static PreparedStatement pstmt=null;
     static ResultSet rs=null;
     public Department(){}
     public Department(Object _displayMember, Object _valueMember){
-        displayMember=_displayMember;
-        valueMember=_valueMember;
+    //    displayMember=_displayMember;
+  //      valueMember=_valueMember;
     }
     public String toString(){
 
@@ -55,7 +55,7 @@ public class Department {
         ArrayList<Department>list=new ArrayList<Department>();
         try{
             String sql="SELECT * FROM Departments WHERE facultyId = ?";
-            pstmt= conn.prepareStatement(sql);
+           // pstmt= conn.prepareStatement(sql);
             System.out.println(fId);
             pstmt.setInt(1,fId);
             rs=pstmt.executeQuery();
