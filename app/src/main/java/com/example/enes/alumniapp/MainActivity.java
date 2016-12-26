@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,7 +14,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button admin,gotoSearch;
+    Button admin,gotoSearch,login;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +23,15 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         admin=(Button)findViewById(R.id.btn_admin);
         gotoSearch=(Button)findViewById(R.id.btn_go_search);
+        login=(Button)findViewById(R.id.btn_login);
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this, Login.class);
+                startActivity(intent);
+            }
+        });
 
         admin.setOnClickListener(new View.OnClickListener(){
             @Override

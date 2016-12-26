@@ -22,7 +22,7 @@ public class AlumniDB extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db){
 
-        db.execSQL("CREATE TABLE ADMIN(ID INTEGER PRIMARY KEY AUTOINCREMENT," +
+        db.execSQL("CREATE TABLE Admin(ID integer PRIMARY KEY AUTOINCREMENT," +
                 "USERNAME TEXT,PASSWORD TEXT);");
 
         db.execSQL("CREATE TABLE FACULTY(ID INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -41,7 +41,7 @@ public class AlumniDB extends SQLiteOpenHelper {
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
-        db.execSQL("DROP TABLE IF EXIST ADMIN");
+        db.execSQL("DROP TABLE IF EXIST Admin");
         db.execSQL("DROP TABLE IF EXIST FACULTY");
         db.execSQL("DROP TABLE IF EXIST DEPARTMENT");
         db.execSQL("DROP TABLE IF EXIST STUDENTS");
@@ -89,8 +89,24 @@ public class AlumniDB extends SQLiteOpenHelper {
             textView.append(cursor.getString(1)+" "+ cursor.getString(2)+"\n");
         }
     }
-
-    //
+    //admin
+    public void insert_admin(String username,String password){
+        ContentValues contentValues=new ContentValues();
+        contentValues.put("USERNAME",username);
+        contentValues.put("PASSWORD",password);
+        this.getWritableDatabase().insertOrThrow("Admin","",contentValues);
+    }
+    public void delete_admin(String username){
+        this.getWritableDatabase().delete("Admin","USERNAME='"+username+"'",null);
+    }
+    public void list_admin(TextView textView){
+        Cursor cursor=this.getReadableDatabase().rawQuery("SELECT * FROM ADMIN",null);
+        textView.setText("");
+        while (cursor.moveToNext()){
+            textView.append(cursor.getString(1)+"\n");
+        }
+    }
+    //department
 
     public void insert_department(String departmentName){
         ContentValues contentValues=new ContentValues();

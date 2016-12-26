@@ -22,7 +22,12 @@
         <activity android:name=".model.AddDepartment" />
         <activity android:name=".Search" />
         <activity android:name=".AdminPage" />
-        <activity android:name=".AddStudents"></activity>
+        <activity android:name=".AddStudents" />
+        <activity android:name=".Login" />
+        <activity android:name=".Students" />
+        <activity android:name=".AddAdmin" />
+        <activity android:name=".AdminOperations" />
+        <activity android:name=".AdminRegistration"></activity>
     </application>
 
 </manifest>
