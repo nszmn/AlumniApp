@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_yeni"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -27,7 +27,8 @@
         <activity android:name=".Students" />
         <activity android:name=".AddAdmin" />
         <activity android:name=".AdminOperations" />
-        <activity android:name=".AdminRegistration"></activity>
+        <activity android:name=".AdminRegistration" />
+        <activity android:name=".StudentOperations"></activity>
     </application>
 
 </manifest>

@@ -37,6 +37,14 @@
         android:id="@+id/edit_Birthday" />
 
     <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Place of Birth"
+        android:ems="10"
+        android:id="@+id/edit_place" />
+
+    <EditText
         android:hint="E-mail Address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,15 +55,38 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Phone Number"
+        android:ems="10"
+        android:id="@+id/edit_phone" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Address"
+        android:ems="10"
+        android:id="@+id/edit_address" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:inputType="date"
         android:ems="10"
         android:id="@+id/edit_addTime"
         android:hint="Add Time"/>
 
     <Button
-        android:text="Add"
+        android:text="SAVE"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btn_AddStudent" />
+        android:id="@+id/btn_AddStudent"
+        android:onClick="btn_click"/>
+
+    <Button
+        android:text="OPERATIONS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_studentOperations" />
 
 </LinearLayout>

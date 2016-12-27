@@ -23,7 +23,7 @@ public class AlumniDB extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db){
 
         db.execSQL("CREATE TABLE Admin(ID integer PRIMARY KEY AUTOINCREMENT," +
-                "USERNAME TEXT,PASSWORD TEXT);");
+                "USERNAME TEXT UNIQUE,PASSWORD TEXT);");
 
         db.execSQL("CREATE TABLE FACULTY(ID INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "FACULTYNAME TEXT);");
@@ -33,9 +33,15 @@ public class AlumniDB extends SQLiteOpenHelper {
                 " FOREIGN KEY(FACULTYID) REFERENCES FACULTY(ID));");
 
         db.execSQL("CREATE TABLE STUDENTS(ID INTEGER PRIMARY KEY AUTOINCREMENT," +
-                " STUDENTNUMBER INTEGER, FIRSTNAME TEXT, LASTNAME TEXT," +
-                " BIRTHDAY INTEGER,PLACEOFBIRTH TEXT, EMAILADDRESS TEXT," +
-                " ADDRESS TEXT,PHONENUMBER INTEGER,REGISTRATIONTIME INTEGER," +
+                " STUDENTNUMBER INTEGER UNIQUE," +
+                " FIRSTNAME TEXT," +
+                " LASTNAME TEXT," +
+                " BIRTHDAY INTEGER," +
+                "PLACEOFBIRTH TEXT," +
+                " EMAILADDRESS TEXT," +
+                " ADDRESS TEXT," +
+                "PHONENUMBER INTEGER," +
+                "REGISTRATIONTIME TEXT," +
                 "FACULTYID INTEGER, FOREIGN KEY(FACULTYID) REFERENCES FACULTY(ID));");
                // "DEPARTMENTID INTEGER, FOREIGN KEY(DEPARTMENTID) REFERENCES DEPARTMENT(ID));");
     }
@@ -67,20 +73,24 @@ public class AlumniDB extends SQLiteOpenHelper {
 
     //Student adding
 
-    public  void insert_student(String firstname,String lastname){
+    public  void insert_student(int number,String firstname,String lastname,String birthday,String place,String mail,String address,int phone,String time){
         ContentValues contentValues=new ContentValues();
+        contentValues.put("STUDENTNUMBER",number);
         contentValues.put("FIRSTNAME",firstname);
         contentValues.put("LASTNAME",lastname);
+        contentValues.put("BIRTHDAY",birthday);
+        contentValues.put("PLACEOFBIRTH",place);
+        contentValues.put("EMAILADDRESS",mail);
+        contentValues.put("ADDRESS",address);
+        contentValues.put("PHONENUMBER",phone);
+        contentValues.put("REGISTRATIONTIME",time);
         this.getWritableDatabase().insertOrThrow("STUDENTS","",contentValues);
-
-
     }
     public void delete_student(String firstname){
         this.getWritableDatabase().delete("STUDENTS","FIRSTNAME='"+firstname+"'",null);
     }
     public void update_students(String old_firstname,String new_firstname){
         this.getWritableDatabase().execSQL("UPDATE STUDENTS SET FIRSTNAME='"+new_firstname+"' WHERE FIRSTNAME='"+old_firstname+"'");
-
     }
     public  void list_allstudents(TextView textView){
         Cursor cursor=this.getReadableDatabase().rawQuery("SELECT * FROM STUDENTS",null);
