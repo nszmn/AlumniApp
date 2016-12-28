@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.enes.alumniapp.Operations.StudentOperations;
+
 public class AddStudents extends AppCompatActivity {
     Button studentOperations;
     EditText number,name,surname,birthday,place,mail,time,phone,address;

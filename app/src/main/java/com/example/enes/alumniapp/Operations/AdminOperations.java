@@ -1,4 +1,4 @@
-package com.example.enes.alumniapp;
+package com.example.enes.alumniapp.Operations;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,6 +6,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.enes.alumniapp.AlumniDB;
+import com.example.enes.alumniapp.R;
 
 public class AdminOperations extends AppCompatActivity {
 
@@ -23,7 +26,7 @@ public class AdminOperations extends AppCompatActivity {
 
         controller=new AlumniDB(this,"",null,1);
     }
-    public void btn_onclick(View view){
+    public void btn_click(View view){
         switch (view.getId()){
             case R.id.btn_admin_list:
                 controller.list_admin(list);
@@ -32,6 +35,8 @@ public class AdminOperations extends AppCompatActivity {
                 controller.delete_admin(username.getText().toString());
                 Toast.makeText(AdminOperations.this,"Deleted.",Toast.LENGTH_SHORT).show();
                 break;
+            default:
+                Toast.makeText(AdminOperations.this,"App FAILED.",Toast.LENGTH_SHORT).show();
         }
     }
 }
