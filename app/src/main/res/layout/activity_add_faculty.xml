@@ -19,7 +19,8 @@
         android:id="@+id/edit_faculty"
         android:layout_marginTop="42dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:text="Save Faculty"
@@ -29,7 +30,8 @@
         android:id="@+id/btn_Add_Faculty"
         android:layout_below="@+id/edit_faculty"
         android:layout_centerHorizontal="true"
-        android:onClick="btn_click"/>
+        android:onClick="btn_click"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:hint="Faculty List"
@@ -38,7 +40,8 @@
         android:id="@+id/text_list"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="96dp" />
+        android:layout_marginBottom="96dp"
+        tools:ignore="HardcodedText" />
 
     <Spinner
         android:layout_width="match_parent"
@@ -49,14 +52,38 @@
         android:layout_marginTop="30dp"
         android:id="@+id/spinner_faculty" />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Faculty Name"
+        android:ems="10"
+        android:layout_above="@+id/btn_list_faculty"
+        android:layout_alignRight="@+id/text_list"
+        android:layout_alignEnd="@+id/text_list"
+        android:id="@+id/edit_deleteFaculty"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:text="@string/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_list_faculty"
+        android:layout_alignParentRight="true"
+        android:onClick="btn_click"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/btn_deleteFaculty" />
+
     <Button
         android:text="List FACULTIES"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/spinner_faculty"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="29dp"
         android:id="@+id/btn_list_faculty"
-        android:onClick="btn_click"/>
+        android:onClick="btn_click"
+        tools:ignore="HardcodedText"
+        android:layout_marginBottom="22dp"
+        android:layout_above="@+id/text_list"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

@@ -11,7 +11,7 @@ import java.util.List;
 
 public class AddFaculty extends AppCompatActivity {
 
-    EditText addFaculty;
+    EditText addFaculty,deleteFaculty;
     TextView list;
     AlumniDB controller;
 
@@ -22,6 +22,7 @@ public class AddFaculty extends AppCompatActivity {
         setContentView(R.layout.activity_add_faculty);
 
         addFaculty=(EditText)findViewById(R.id.edit_faculty);
+        deleteFaculty=(EditText)findViewById(R.id.edit_deleteFaculty);
         list=(TextView)findViewById(R.id.text_list);
         controller=new AlumniDB(this,"",null,1);
 
@@ -42,6 +43,9 @@ public class AddFaculty extends AppCompatActivity {
             case R.id.btn_list_faculty:
                 controller.list_faculty(list);
                 break;
+            case R.id.btn_deleteFaculty:
+                controller.delete_faculty(deleteFaculty.getText().toString());
+                Toast.makeText(AddFaculty.this,"Deleted",Toast.LENGTH_SHORT).show();
         }
 
     }

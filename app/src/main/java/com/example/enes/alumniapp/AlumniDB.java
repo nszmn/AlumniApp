@@ -135,6 +135,9 @@ public class AlumniDB extends SQLiteOpenHelper {
     }
 
 
+    public void update_deparment(String newDepartment,String oldDepartment){
+        this.getWritableDatabase().execSQL("UPDATE DEPARTMENT SET DEPARTMENTNAME='"+newDepartment+"' WHERE DEPARTMENTNAME='"+oldDepartment+"'");
+    }
     public List<String> getAllFaculties()
     {
 

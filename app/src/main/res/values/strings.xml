@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">AlumniApp</string>
     <string name="action_settings">Settings</string>
+    <string name="delete">Delete</string>
+    <string name="department_list">Department List</string>
+    <string name="department_name">Department Name</string>
 </resources>
