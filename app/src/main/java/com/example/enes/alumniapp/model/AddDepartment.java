@@ -35,6 +35,7 @@ public class AddDepartment extends AppCompatActivity {
     }
     public void btn_click(View view){
         switch (view.getId()){
+
             case R.id.btn_add_department:
                 try{
                     controller.insert_department(departmentName.getText().toString());

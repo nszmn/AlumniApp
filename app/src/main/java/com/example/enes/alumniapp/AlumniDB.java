@@ -117,6 +117,10 @@ public class AlumniDB extends SQLiteOpenHelper {
         }
     }
     //department
+    public void delete_all_faculty(){
+        this.getWritableDatabase().delete("FACULTY","",null);
+    }
+
 
     public void insert_department(String departmentName){
         ContentValues contentValues=new ContentValues();

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_add_faculty"
     android:layout_width="match_parent"
@@ -14,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:hint="List Faculties"
+        android:hint="Faculty Name"
         android:ems="10"
         android:id="@+id/edit_faculty"
         android:layout_marginTop="42dp"
@@ -52,28 +53,6 @@
         android:layout_marginTop="30dp"
         android:id="@+id/spinner_faculty" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="Faculty Name"
-        android:ems="10"
-        android:layout_above="@+id/btn_list_faculty"
-        android:layout_alignRight="@+id/text_list"
-        android:layout_alignEnd="@+id/text_list"
-        android:id="@+id/edit_deleteFaculty"
-        tools:ignore="HardcodedText" />
-
-    <Button
-        android:text="@string/delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/btn_list_faculty"
-        android:layout_alignParentRight="true"
-        android:onClick="btn_click"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/btn_deleteFaculty" />
-
     <Button
         android:text="List FACULTIES"
         android:layout_width="wrap_content"
@@ -81,9 +60,25 @@
         android:id="@+id/btn_list_faculty"
         android:onClick="btn_click"
         tools:ignore="HardcodedText"
-        android:layout_marginBottom="22dp"
-        android:layout_above="@+id/text_list"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@+id/spinner_faculty"
+        android:layout_alignLeft="@+id/btn_Add_Faculty"
+        android:layout_alignStart="@+id/btn_Add_Faculty"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="13dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_delete"
+        android:id="@+id/imgbtn_delete_faculty"
+        android:onClick="btn_click"
+        android:contentDescription=""
+        tools:ignore="ContentDescription"
+        android:layout_alignTop="@+id/btn_list_faculty"
+        android:layout_toRightOf="@+id/edit_faculty"
+        android:layout_toEndOf="@+id/edit_faculty"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp" />
 
 </RelativeLayout>

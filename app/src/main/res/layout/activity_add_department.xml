@@ -45,17 +45,6 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
-    <Button
-        android:text="Save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edit_add_department"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="19dp"
-        android:id="@+id/btn_add_department"
-        android:onClick="btn_click"
-        tools:ignore="HardcodedText" />
-
     <TextView
         android:text="@string/department_list"
         android:layout_width="wrap_content"
@@ -68,24 +57,35 @@
         android:text="Edit Departments"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
         android:id="@+id/btn_editDepartments"
-        android:layout_below="@+id/btn_add_department"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="24dp"
         android:onClick="btn_click"
-        android:layout_marginStart="24dp" />
+        android:layout_alignTop="@+id/btn_add_department"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/btn_add_department"
+        android:onClick="btn_click"
+        tools:ignore="HardcodedText"
+        android:layout_below="@+id/edit_add_department"
+        android:layout_toLeftOf="@+id/btn_deleteDepartment"
+        android:layout_toStartOf="@+id/btn_deleteDepartment"
+        android:layout_marginRight="9dp"
+        android:layout_marginEnd="9dp" />
 
     <Button
         android:text="Delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/btn_editDepartments"
-        android:layout_toRightOf="@+id/btn_editDepartments"
-        android:layout_toEndOf="@+id/btn_editDepartments"
-        android:layout_marginLeft="24dp"
-        android:layout_marginStart="24dp"
         android:onClick="btn_click"
-        android:id="@+id/btn_deleteDepartment" />
+        android:id="@+id/btn_deleteDepartment"
+        android:layout_alignBaseline="@+id/btn_add_department"
+        android:layout_alignBottom="@+id/btn_add_department"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
 </RelativeLayout>
