@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_add_admin"
     android:layout_width="match_parent"
@@ -56,24 +57,23 @@
         android:layout_alignParentEnd="true" />
 
     <Button
-        android:text="Save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_admin_save"
-        android:layout_below="@+id/edit_addAdmin_password"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="44dp"
-        android:onClick="btn_click"/>
-
-    <Button
         android:text="Operations"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btn_admin_adminOperation"
         android:onClick="btn_click"
-        android:layout_alignTop="@+id/btn_admin_save"
-        android:layout_alignLeft="@+id/btn_admin_save"
-        android:layout_alignStart="@+id/btn_admin_save"
-        android:layout_marginTop="95dp" />
+        android:layout_marginTop="29dp"
+        android:layout_below="@+id/btn_admin_save"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_admin_save"
+        android:onClick="btn_click"
+        android:layout_below="@+id/edit_addAdmin_password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="78dp" />
 
 </RelativeLayout>

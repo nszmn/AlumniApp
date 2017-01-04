@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_admin_registration"
     android:layout_width="match_parent"
@@ -20,7 +21,8 @@
         android:layout_marginTop="12dp"
         android:id="@+id/textView16"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        tools:ignore="HardcodedText" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -33,7 +35,8 @@
         android:layout_alignParentStart="true"
         android:id="@+id/edit_reg_username"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:text="Enter Password"
@@ -45,12 +48,13 @@
         android:layout_marginTop="12dp"
         android:id="@+id/textView17"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        tools:ignore="HardcodedText" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:inputType=""
         android:hint="Password"
         android:ems="10"
         android:layout_below="@+id/textView17"
@@ -58,7 +62,8 @@
         android:layout_alignParentStart="true"
         android:id="@+id/edit_reg_password"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        tools:ignore="HardcodedText,TextFields" />
 
     <Button
         android:text="Save"
@@ -68,6 +73,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="28dp"
         android:id="@+id/btn_registr"
-        android:onClick="btn_click"/>
+        android:onClick="btn_click"
+        tools:ignore="HardcodedText" />
 
 </RelativeLayout>
