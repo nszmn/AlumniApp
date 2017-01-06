@@ -27,15 +27,18 @@
         android:layout_alignParentStart="true"
         android:id="@+id/spinner_search_department" />
 
-    <EditText
+    <TextView
+        android:text="Student ID or Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:hint="Surname"
-        android:ems="10"
-        android:id="@+id/edit_search_surname"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:id="@+id/textView7"
+        android:layout_below="@+id/spinner_search_department"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        tools:ignore="HardcodedText" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -44,36 +47,37 @@
         android:hint="First Name"
         android:ems="10"
         android:id="@+id/edit_search_firstname"
-        android:layout_above="@+id/textView8"
-        android:layout_alignLeft="@+id/edit_search_surname"
-        android:layout_alignStart="@+id/edit_search_surname"
-        android:layout_marginBottom="17dp" />
+        android:layout_below="@+id/textView7"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:text="Search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="47dp"
         android:id="@+id/btn_search"
-        android:layout_below="@+id/edit_search_surname"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/textView7"
+        android:layout_centerHorizontal="true"
+        tools:ignore="HardcodedText" />
 
-    <TextView
-        android:text="Student First Name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView7"
-        android:layout_above="@+id/edit_search_firstname"
-        android:layout_alignLeft="@+id/edit_search_firstname"
-        android:layout_alignStart="@+id/edit_search_firstname" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/btn_search"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="30dp">
 
-    <TextView
-        android:text="Student Surname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView8"
-        android:layout_above="@+id/btn_search"
-        android:layout_alignLeft="@+id/edit_search_surname"
-        android:layout_alignStart="@+id/edit_search_surname"
-        android:layout_marginBottom="40dp" />
+        <GridView
+            android:id="@+id/listGrid"
+            android:numColumns="1"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 </RelativeLayout>

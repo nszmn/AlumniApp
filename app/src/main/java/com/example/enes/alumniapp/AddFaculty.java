@@ -1,6 +1,8 @@
 package com.example.enes.alumniapp;
 
+import android.content.Context;
 import android.content.DialogInterface;
+import android.database.Cursor;
 import android.database.SQLException;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +11,7 @@ import android.view.View;
 import android.widget.*;
 import android.widget.Spinner;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AddFaculty extends AppCompatActivity {
@@ -16,8 +19,10 @@ public class AddFaculty extends AppCompatActivity {
     EditText addFaculty;
     TextView list;
     AlumniDB controller;
+    Spinner sp;
+    Button btn;
 
-
+    ArrayList<String> names=new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -29,7 +34,17 @@ public class AddFaculty extends AppCompatActivity {
 
         controller=new AlumniDB(this,"",null,1);
 
+        sp=(Spinner)findViewById(R.id.spinner_faculty);
 
+        final AlumniDB alumniDB=new AlumniDB(this);
+        btn=(Button)findViewById(R.id.btn_Add_Faculty);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Cursor cursor= alumniDB.getAllFaculty();
+            }
+        });
     }
     public void btn_click(View view){
         switch (view.getId()){

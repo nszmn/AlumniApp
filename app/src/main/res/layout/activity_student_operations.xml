@@ -22,7 +22,8 @@
         android:layout_alignParentStart="true"
         android:id="@+id/edit_studentDelete"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:text="DELETE"
@@ -35,7 +36,8 @@
         android:id="@+id/btn_studentDelete"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:onClick="btn_click"/>
+        android:onClick="btn_click"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:text="Students Information"
@@ -48,7 +50,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:text="LIST ALL STUDENTS INFO"
@@ -61,7 +64,8 @@
         android:layout_marginTop="16dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:onClick="btn_click"/>
+        android:onClick="btn_click"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:text="UPDATE STUDENT INFO"
@@ -74,6 +78,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:onClick="btn_click"/>
+        android:onClick="btn_click"
+        tools:ignore="HardcodedText" />
 
 </RelativeLayout>

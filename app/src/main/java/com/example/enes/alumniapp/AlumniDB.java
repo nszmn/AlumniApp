@@ -11,13 +11,20 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 public class AlumniDB extends SQLiteOpenHelper {
+
+    public static final String DATABASE_NAME="AlumniDb";
+
+
     private Connection AlumniDB;
-    private static final String AlumniDb ="AlumniDatabase";
-    private static final int SURUM = 1;
+    //private static final String AlumniDb ="AlumniDatabase";
+   // private static final int SURUM = 1;
 
     public  AlumniDB(Context context,String name,SQLiteDatabase.CursorFactory factory,int version){
-        super(context,"Test.db",factory,version);
+            //super(context,"Test.db",factory,version);
+        super(context,"AlumniDb",null,1);
+
     }
+    public AlumniDB(Context context) {super(context,"AlumniDb",null,1);}
 
     @Override
     public void onCreate(SQLiteDatabase db){
@@ -161,6 +168,10 @@ public class AlumniDB extends SQLiteOpenHelper {
         db.close();
 
         return lectrues;
+    }
+    public Cursor getAllFaculty(SQLiteDatabase db){
+        String[] col={};
+        return db.query("FACULTY",col,null,null,null,null,null);
     }
 
 }

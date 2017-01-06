@@ -7,10 +7,11 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:inputType=""
         android:hint="Student Number"
         android:ems="10"
-        android:id="@+id/edit_StudentNumber" />
+        android:id="@+id/edit_StudentNumber"
+        tools:ignore="HardcodedText,TextFields" />
 
     <EditText
         android:layout_width="match_parent"
@@ -18,7 +19,8 @@
         android:inputType="textPersonName"
         android:hint="Name"
         android:ems="10"
-        android:id="@+id/edit_Name" />
+        android:id="@+id/edit_Name"
+        tools:ignore="HardcodedText" />
 
     <EditText
         android:layout_width="match_parent"
@@ -26,7 +28,8 @@
         android:inputType="textPersonName"
         android:hint="Surname"
         android:ems="10"
-        android:id="@+id/edit_Surname" />
+        android:id="@+id/edit_Surname"
+        tools:ignore="HardcodedText" />
 
     <EditText
         android:layout_width="match_parent"
@@ -34,7 +37,8 @@
         android:inputType="textPersonName"
         android:hint="Birthday"
         android:ems="10"
-        android:id="@+id/edit_Birthday" />
+        android:id="@+id/edit_Birthday"
+        tools:ignore="HardcodedText" />
 
     <EditText
         android:layout_width="match_parent"
@@ -42,7 +46,8 @@
         android:inputType="textPersonName"
         android:hint="Place of Birth"
         android:ems="10"
-        android:id="@+id/edit_place" />
+        android:id="@+id/edit_place"
+        tools:ignore="HardcodedText" />
 
     <EditText
         android:hint="E-mail Address"
@@ -50,7 +55,8 @@
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:id="@+id/edit_Email" />
+        android:id="@+id/edit_Email"
+        tools:ignore="HardcodedText" />
 
     <EditText
         android:layout_width="match_parent"
@@ -58,7 +64,8 @@
         android:inputType="textPersonName"
         android:hint="Phone Number"
         android:ems="10"
-        android:id="@+id/edit_phone" />
+        android:id="@+id/edit_phone"
+        tools:ignore="HardcodedText,TextFields" />
 
     <EditText
         android:layout_width="match_parent"
@@ -66,7 +73,8 @@
         android:inputType="textPersonName"
         android:hint="Address"
         android:ems="10"
-        android:id="@+id/edit_address" />
+        android:id="@+id/edit_address"
+        tools:ignore="HardcodedText" />
 
     <EditText
         android:layout_width="match_parent"
@@ -74,19 +82,22 @@
         android:inputType="date"
         android:ems="10"
         android:id="@+id/edit_addTime"
-        android:hint="Add Time"/>
+        android:hint="Add Time"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:text="SAVE"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btn_AddStudent"
-        android:onClick="btn_click"/>
+        android:onClick="btn_click"
+        tools:ignore="HardcodedText" />
 
     <Button
         android:text="OPERATIONS"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btn_studentOperations" />
+        android:id="@+id/btn_studentOperations"
+        tools:ignore="HardcodedText" />
 
 </LinearLayout>

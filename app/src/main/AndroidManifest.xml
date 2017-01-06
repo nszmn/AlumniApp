@@ -24,11 +24,14 @@
         <activity android:name=".AdminPage" />
         <activity android:name=".AddStudents" />
         <activity android:name=".Login" />
-        <activity android:name=".Students" />
         <activity android:name=".AddAdmin" />
         <activity android:name=".Operations.AdminOperations" />
         <activity android:name=".AdminRegistration" />
-        <activity android:name=".Operations.StudentOperations"></activity>
+        <activity android:name=".Operations.StudentOperations"></activity><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>
