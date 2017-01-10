@@ -85,19 +85,15 @@
         android:hint="Add Time"
         tools:ignore="HardcodedText" />
 
-    <Button
-        android:text="SAVE"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_AddStudent"
-        android:onClick="btn_click"
-        tools:ignore="HardcodedText" />
+
+
+
 
     <Button
-        android:text="OPERATIONS"
+        android:text="Save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btn_studentOperations"
-        tools:ignore="HardcodedText" />
+        android:id="@+id/btnSave"
+        android:onClick="onclick"/>
 
 </LinearLayout>

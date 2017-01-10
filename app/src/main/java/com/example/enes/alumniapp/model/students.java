@@ -7,9 +7,11 @@ package com.example.enes.alumniapp.model;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.enes.alumniapp.AlumniDB;
+import com.example.enes.alumniapp.Database.AlumniDB;
+import com.example.enes.alumniapp.Database.Helper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +23,7 @@ public class students extends AlumniDB{
     }
 
     private Integer ID;
+    private Integer studentID;
     private String firstname;
     private String lastname;
     private Integer birthday;
@@ -32,8 +35,11 @@ public class students extends AlumniDB{
     private String regTime;
 
 
-    public Integer getID(){return ID;}
+    public Integer getID(){return Helper.getUserID();}
     public void setID(Integer id){this.ID=id;}
+
+    public Integer getStudentID(){return studentID;}
+    public void setStudentID(Integer studentID){this.studentID=studentID;}
 
     public String getFirstname(){return firstname;}
     public void setFirstname(String firstname){ this.firstname=firstname; }
@@ -59,25 +65,38 @@ public class students extends AlumniDB{
     public String getRegTime(){return regTime;}
     public void setRegTime(String regTime){this.regTime=regTime;}
 
+    //INSERT INTO TABLE STUDENT
     public void Insert(){
-        SQLiteDatabase db=this.getWritableDatabase();
-        ContentValues values=new ContentValues();
-        values.put("ID",this.getID());
-        values.put("FIRSTNAME",this.getFirstname());
-        values.put("lastname",this.getLastname());
-        values.put("BIRTHDAY",this.getBirthday());
-        values.put("PLACEOFBIRTH",this.getPlace());
-        values.put("EMAILADDRESS",this.getMail());
-        values.put("ADDRESS",this.getAddres());
-        values.put("PHONENUMBER",this.getPhone());
-        values.put("REGISTRATIONTIME",this.getRegTime());
-        db.insert("STUDENTS",DATABASE_NAME,values);
-        db.close();
+        try{
+            SQLiteDatabase db=this.getWritableDatabase();
+            ContentValues values=new ContentValues();
+            //values.put("ID",this.getID());
+
+            values.put("firstname",this.getFirstname());
+            values.put("lastname",this.getLastname());
+
+//            this.getWritableDatabase().insertOrThrow(AlumniDB.CREATE_TB,"",values);//add database
+            db.insert("ogrenciler","AlumniDB",values);
+            db.close();
+        }catch (SQLException e){
+            e.printStackTrace();
+            //Toast.makeText(students.this,"Hata",Toast.LENGTH_SHORT).show();
+        }
+
     }
 
-    private String TABLE_NAME="STUDENTS";
+    private String TABLE_NAME="ogrenciler";
+
+    //delete all in student table
+    public void Clean(){
+        String query = "Delete from student";
+        SQLiteDatabase db=this.getWritableDatabase();
+        db.delete("ogrenciler",null,null);
+    }
+
+
     public List<students> ListAll(){
-        List<students> list=new ArrayList< >();
+        List<students> list=new ArrayList<students>();
 
         String select="SELECT * FROM "+TABLE_NAME;
 
@@ -95,6 +114,8 @@ public class students extends AlumniDB{
         }
         return list;
     }
+
+
     public students getAllStudents(){
         String SelectAll="SELECT * FROM "+ TABLE_NAME;
         SQLiteDatabase db=this.getReadableDatabase();

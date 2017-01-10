@@ -1,7 +1,6 @@
 package com.example.enes.alumniapp;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,15 +8,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.enes.alumniapp.model.Helper;
-import com.example.enes.alumniapp.model.alumni;
-
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.appindexing.Thing;
-import com.google.android.gms.common.api.GoogleApiClient;
+import com.example.enes.alumniapp.Database.Helper;
+import com.example.enes.alumniapp.model.admin;
 
 public class Login extends AppCompatActivity {
+
+
     public static String uName = "";
     public static String pass = "";
     private Button login;
@@ -40,8 +36,8 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 uName = username.getText().toString();
                 pass = password.getText().toString();
-                alumni obj = new alumni(getApplicationContext());
-                alumni result=obj.Login(uName,pass);
+                admin obj = new admin(getApplicationContext());
+                admin result=obj.Login(uName,pass);
                 if(result==null){
                     Toast.makeText(Login.this,"Username or Password is not Correct",Toast.LENGTH_LONG).show();
                     Intent intentMain=new Intent(Login.this,MainActivity.class);

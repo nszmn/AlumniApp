@@ -1,6 +1,5 @@
 package com.example.enes.alumniapp;
 
-import android.content.Intent;
 import android.database.SQLException;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.enes.alumniapp.Database.AlumniDB;
 
 public class AddAdmin extends AppCompatActivity {
     Button operation;
@@ -23,7 +24,7 @@ public class AddAdmin extends AppCompatActivity {
         username=(EditText)findViewById(R.id.edit_addAdmin_username);
         password=(EditText)findViewById(R.id.edit_addAdmin_password);
 
-        controller=new AlumniDB(this,"",null,1);
+        //controller=new AlumniDB(this,"",null,1);
 
 
     }

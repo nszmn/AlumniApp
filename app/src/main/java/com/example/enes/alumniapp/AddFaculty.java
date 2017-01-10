@@ -1,18 +1,13 @@
 package com.example.enes.alumniapp;
 
-import android.content.Context;
-import android.content.DialogInterface;
-import android.database.Cursor;
-import android.database.SQLException;
-import android.support.v7.app.AlertDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
 import android.widget.Spinner;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.example.enes.alumniapp.Database.AlumniDB;
 
 public class AddFaculty extends AppCompatActivity {
 
@@ -20,9 +15,8 @@ public class AddFaculty extends AppCompatActivity {
     TextView list;
     AlumniDB controller;
     Spinner sp;
-    Button btn;
+    Button button;
 
-    ArrayList<String> names=new ArrayList<String>();
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -32,58 +26,17 @@ public class AddFaculty extends AppCompatActivity {
 
         list=(TextView)findViewById(R.id.text_list);
 
-        controller=new AlumniDB(this,"",null,1);
+        //controller=new AlumniDB(this,"",null,1);
 
         sp=(Spinner)findViewById(R.id.spinner_faculty);
 
-        final AlumniDB alumniDB=new AlumniDB(this);
-        btn=(Button)findViewById(R.id.btn_Add_Faculty);
-
-        btn.setOnClickListener(new View.OnClickListener() {
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Cursor cursor= alumniDB.getAllFaculty();
+                Intent aa=new Intent(AddFaculty.this,facultyAdd.class);
+                startActivity(aa);
             }
         });
     }
-    public void btn_click(View view){
-        switch (view.getId()){
-
-            case R.id.btn_Add_Faculty:
-                try{
-                    controller.insert_faculty(addFaculty.getText().toString());
-                   Toast.makeText(AddFaculty.this,"DONE",Toast.LENGTH_SHORT).show();
-
-                }catch (SQLException e){
-                    Toast.makeText(AddFaculty.this,"ALREADY EXISTS",Toast.LENGTH_SHORT).show();
-
-                }
-                break;
-            case R.id.btn_list_faculty:
-                controller.list_faculty(list);
-                break;
-
-
-            case R.id.imgbtn_delete_faculty:
-                AlertDialog.Builder dialog=new AlertDialog.Builder(AddFaculty.this);
-                dialog.setTitle("Delete Faculty");
-                final EditText delete=new EditText(this);
-                dialog.setView(delete);
-                dialog.setPositiveButton("DELETE ", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        controller.delete_faculty(delete.getText().toString());
-                        Toast.makeText(AddFaculty.this,"DELETED.",Toast.LENGTH_SHORT).show();
-                    }
-                });
-                dialog.show();
-
-                break;
-
-
-        }
-
-    }
-
 
 }

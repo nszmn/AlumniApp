@@ -7,7 +7,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.enes.alumniapp.AlumniDB;
+import com.example.enes.alumniapp.Database.AlumniDB;
 import com.example.enes.alumniapp.R;
 
 public class AdminOperations extends AppCompatActivity {
@@ -24,7 +24,7 @@ public class AdminOperations extends AppCompatActivity {
 
         list=(TextView)findViewById(R.id.text_admin_list);
 
-        controller=new AlumniDB(this,"",null,1);
+        //controller=new AlumniDB(this,"",null,1);
     }
     public void btn_click(View view){
         switch (view.getId()){

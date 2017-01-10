@@ -73,7 +73,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="28dp"
         android:id="@+id/btn_registr"
-        android:onClick="btn_click"
         tools:ignore="HardcodedText" />
 
 </RelativeLayout>

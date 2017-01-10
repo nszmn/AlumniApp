@@ -1,4 +1,4 @@
-package com.example.enes.alumniapp.model;
+package com.example.enes.alumniapp;
 
 import android.content.DialogInterface;
 import android.database.SQLException;
@@ -10,8 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.enes.alumniapp.AlumniDB;
-import com.example.enes.alumniapp.R;
+import com.example.enes.alumniapp.Database.AlumniDB;
 
 public class AddDepartment extends AppCompatActivity {
 
@@ -30,7 +29,7 @@ public class AddDepartment extends AppCompatActivity {
 
         listDepartment=(TextView)findViewById(R.id.text_department_list);
 
-        controller=new AlumniDB(this,"",null,1);
+       // controller=new AlumniDB(this,"",null,1);
 
     }
     public void btn_click(View view){
@@ -38,8 +37,8 @@ public class AddDepartment extends AppCompatActivity {
 
             case R.id.btn_add_department:
                 try{
-                    controller.insert_department(departmentName.getText().toString());
-                    controller.list_department(listDepartment);
+                    //controller.insert_department(departmentName.getText().toString());
+                   // controller.list_department(listDepartment);
 
                 }catch (SQLException e){
                     Toast.makeText(AddDepartment.this,"ALREADY EXISTS",Toast.LENGTH_SHORT).show();
@@ -56,7 +55,7 @@ public class AddDepartment extends AppCompatActivity {
                     dialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            controller.update_deparment(departmentName.getText().toString(),newDepartmentName.getText().toString());
+                          //  controller.update_deparment(departmentName.getText().toString(),newDepartmentName.getText().toString());
 
                         }
                     });

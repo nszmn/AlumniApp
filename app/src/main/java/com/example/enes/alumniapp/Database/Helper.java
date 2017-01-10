@@ -1,4 +1,6 @@
-package com.example.enes.alumniapp.model;
+package com.example.enes.alumniapp.Database;
+
+import com.example.enes.alumniapp.model.students;
 
 import java.util.List;
 
@@ -7,14 +9,14 @@ import java.util.List;
  */
 
 public final class Helper {
-    private static int UserID;
+    private static int StudentID;
     private static students Student;
     private static List<students> StudentList;
 
 
 
-    public static int getUserID (){return UserID;}
-    public static void setUserID(int userID){UserID=userID;}
+    public static int getUserID (){return StudentID;}
+    public static void setUserID(int StudentID){StudentID=StudentID;}
 
     public static students getStudent(){return Student;}
     public static void setStudent(students student){Student=student;}

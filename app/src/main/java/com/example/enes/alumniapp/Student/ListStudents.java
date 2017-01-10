@@ -24,38 +24,40 @@ public class ListStudents extends BaseAdapter {
     private List<students>studentsList;
 
     public ListStudents(Activity activity,List<students> studentses){
-        layoutInflater=(LayoutInflater)activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        layoutInflater=(LayoutInflater)activity.getSystemService(
+                Context.LAYOUT_INFLATER_SERVICE);
         studentsList=studentses;
     }
 
     @Override
     public int getCount() {
-        return 0;
+        return studentsList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return studentsList.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View view;
-        view=layoutInflater.inflate(R.layout.all_students_list,null) ;
-         ID=(TextView)view.findViewById(R.id.ListStudentID);
+        view=layoutInflater.inflate(R.layout.all_students_list,null);
+
+        ID=(TextView)view.findViewById(R.id.ListStudentID);
         Name=(TextView)view.findViewById(R.id.ListStudentName);
         Reg=(TextView)view.findViewById(R.id.ListRegTime);
 
         students st=studentsList.get(position);
 
         ID.setText(st.getID());
-        Name.setText(st.getFirstname()+" "+st.getLastname());
-        Reg.setText(st.getRegTime());
+        Name.setText(st.getFirstname());//+" "+st.getLastname());
+        Reg.setText(st.getLastname());
 
 
         return view;

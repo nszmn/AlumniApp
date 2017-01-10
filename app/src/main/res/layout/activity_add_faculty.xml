@@ -23,17 +23,6 @@
         android:layout_centerHorizontal="true"
         tools:ignore="HardcodedText" />
 
-    <Button
-        android:text="Save Faculty"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:id="@+id/btn_Add_Faculty"
-        android:layout_below="@+id/edit_faculty"
-        android:layout_centerHorizontal="true"
-        android:onClick="btn_click"
-        tools:ignore="HardcodedText" />
-
     <TextView
         android:hint="Faculty List"
         android:layout_width="wrap_content"
@@ -53,20 +42,6 @@
         android:layout_marginTop="30dp"
         android:id="@+id/spinner_faculty" />
 
-    <Button
-        android:text="List FACULTIES"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_list_faculty"
-        android:onClick="btn_click"
-        tools:ignore="HardcodedText"
-        android:layout_below="@+id/spinner_faculty"
-        android:layout_alignLeft="@+id/btn_Add_Faculty"
-        android:layout_alignStart="@+id/btn_Add_Faculty"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="13dp" />
-
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -80,5 +55,40 @@
         android:layout_toEndOf="@+id/edit_faculty"
         android:layout_marginLeft="11dp"
         android:layout_marginStart="11dp" />
+
+    <Button
+        android:text="Save Faculty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:id="@+id/btn_Add_Faculty"
+        android:onClick="btn_click"
+        tools:ignore="HardcodedText"
+        android:layout_below="@+id/edit_faculty"
+        android:layout_toLeftOf="@+id/text_list"
+        android:layout_toStartOf="@+id/text_list" />
+
+    <Button
+        android:text="List FACULTIES"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_list_faculty"
+        android:onClick="btn_click"
+        tools:ignore="HardcodedText"
+        android:layout_above="@+id/spinner_faculty"
+        android:layout_toLeftOf="@+id/imgbtn_delete_faculty"
+        android:layout_toStartOf="@+id/imgbtn_delete_faculty" />
+
+    <Button
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinner_faculty"
+        android:layout_alignLeft="@+id/btn_Add_Faculty"
+        android:layout_alignStart="@+id/btn_Add_Faculty"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="30dp"
+        android:id="@+id/button" />
 
 </RelativeLayout>

@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.enes.alumniapp.Operations.AdminOperations;
-import com.example.enes.alumniapp.model.AddDepartment;
 
 public class AdminPage extends AppCompatActivity {
 
@@ -46,14 +45,14 @@ public class AdminPage extends AppCompatActivity {
         faculty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(AdminPage.this,AddFaculty.class);
+                Intent intent=new Intent(AdminPage.this,facultyAdd.class);
                 startActivity(intent);
             }
         });
         department.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(AdminPage.this, AddDepartment.class);
+                Intent intent=new Intent(AdminPage.this, Department.class);
                 startActivity(intent);
             }
         });
