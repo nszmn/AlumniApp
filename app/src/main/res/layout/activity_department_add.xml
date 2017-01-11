@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_department_add"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.enes.alumniapp.DepartmentAdd">
+
+    <Button
+        android:text="SAVE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/edit_addDepartmentList"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/btn_departmentAdd"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:text="List"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_departmentAdd"
+        android:layout_alignLeft="@+id/btn_departmentAdd"
+        android:layout_alignStart="@+id/btn_departmentAdd"
+        android:id="@+id/btn_departmentList"
+        tools:ignore="HardcodedText" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerDepartmentList"
+        android:layout_alignBottom="@+id/btn_departmentList"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/btn_departmentList"
+        android:layout_toStartOf="@+id/btn_departmentList" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Department Name"
+        android:ems="10"
+        android:layout_marginTop="30dp"
+        android:id="@+id/edit_addDepartmentList"
+        tools:ignore="HardcodedText,RelativeOverlap"
+        android:layout_below="@+id/spinnerFacultyForDepartment"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinnerFacultyForDepartment"
+        android:layout_marginTop="23dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="FACULTY NAME"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView18"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        tools:ignore="HardcodedText" />
+
+</RelativeLayout>

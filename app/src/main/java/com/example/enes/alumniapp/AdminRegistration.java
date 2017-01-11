@@ -42,12 +42,12 @@ public class AdminRegistration extends AppCompatActivity {
                     obj.setUsername(uName);
                     obj.Insert();
 
-                    Toast.makeText(AdminRegistration.this,"OK",Toast.LENGTH_SHORT).show();
-                    Intent reg = new Intent(AdminRegistration.this, MainActivity.class);
+                    Toast.makeText(AdminRegistration.this,"SAVED",Toast.LENGTH_SHORT).show();
+                    Intent reg = new Intent(AdminRegistration.this, Login.class);
                     startActivity(reg);
                 }catch (SQLException e){
                     e.printStackTrace();
-                    Toast.makeText(AdminRegistration.this,"hata",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AdminRegistration.this,"Erorr.Close App",Toast.LENGTH_SHORT).show();
 
                 }
 

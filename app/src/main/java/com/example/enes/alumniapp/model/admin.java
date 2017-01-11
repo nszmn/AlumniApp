@@ -4,14 +4,17 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.TextView;
 
+import com.example.enes.alumniapp.Database.AlumniDB;
 import com.example.enes.alumniapp.Database.DatabaseHelper;
+import com.example.enes.alumniapp.Database.Helper;
 
 /**
  * Created by Enes on 8.1.2017.
  */
 
-public class admin extends DatabaseHelper {
+public class admin extends AlumniDB {
 
     public admin(Context context) {
         super(context);
@@ -21,7 +24,7 @@ public class admin extends DatabaseHelper {
     private String password;
     private Integer Id;
 
-    public Integer getId(){return Id;}
+    public Integer getId(){return Helper.getUserID();}
     public void setId(Integer id){this.Id=id;}
 
     public String getUsername(){return username;}
@@ -38,14 +41,22 @@ public class admin extends DatabaseHelper {
         ContentValues values=new ContentValues();
         values.put("username",this.getUsername());
         values.put("password",this.getPassword());
-        db.insert("admin",DATABASE_NAME,values);
+        db.insert("admin","AlumniDB",values);
         db.close();
     }
     //DELETE ADMIN
-    public void Delete(){
-        String query="Delete from admin";
+    public void Delete(String username){
+
+        String query="Delete from admin where="+username;
         SQLiteDatabase db=this.getWritableDatabase();
         db.delete("admin",null,null);
+    }
+
+
+    public boolean deleteRow(long username) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String where = "username" + "=" + username;
+        return db.delete("admin", where, null) != 0;
     }
 
 
@@ -69,4 +80,13 @@ public class admin extends DatabaseHelper {
         close();
         return this;
     }
+
+    public  void list_allAdmin(TextView textView){
+        Cursor cursor=this.getReadableDatabase().rawQuery("SELECT * FROM admin",null);
+        textView.setText("");
+        while(cursor.moveToNext()){
+            textView.append(cursor.getString(0)+" "+ cursor.getString(1)+" "+ cursor.getString(2)+"\n");
+        }
+    }
+
 }

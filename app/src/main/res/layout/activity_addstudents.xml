@@ -76,24 +76,33 @@
         android:id="@+id/edit_address"
         tools:ignore="HardcodedText" />
 
-    <EditText
+
+    <Spinner
+        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="date"
-        android:ems="10"
-        android:id="@+id/edit_addTime"
-        android:hint="Add Time"
-        tools:ignore="HardcodedText" />
+        android:id="@+id/spinner_ADDSTUDENT_faculty" />
 
-
-
-
+    <Spinner
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner_ADDSTUDENT_department" />
 
     <Button
+        android:layout_marginTop="10dp"
         android:text="Save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btnSave"
-        android:onClick="onclick"/>
+        android:onClick="onclick"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:text="Operations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnOperations"
+        android:onClick="btn_click"/>
 
 </LinearLayout>

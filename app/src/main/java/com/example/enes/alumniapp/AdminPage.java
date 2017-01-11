@@ -18,9 +18,18 @@ public class AdminPage extends AppCompatActivity {
         setContentView(R.layout.activity_admin_page);
         admin=(Button)findViewById(R.id.btn_admin_operation);
         student=(Button)findViewById(R.id.btn_admin_students);
-        faculty=(Button)findViewById(R.id.btn_admin_faculty);
-        department=(Button)findViewById(R.id.btn_admin_department);
+        //faculty=(Button)findViewById(R.id.btn_admin_faculty);
+        //department=(Button)findViewById(R.id.btn_admin_department);
         operation=(Button)findViewById(R.id.btn_admin_op);
+        final Button search=(Button)findViewById(R.id.btn_ASearch);
+
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(AdminPage.this,Search.class);
+                startActivity(intent);
+            }
+        });
 
         operation.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,20 +51,7 @@ public class AdminPage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        faculty.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(AdminPage.this,facultyAdd.class);
-                startActivity(intent);
-            }
-        });
-        department.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(AdminPage.this, Department.class);
-                startActivity(intent);
-            }
-        });
+
 
     }
 }

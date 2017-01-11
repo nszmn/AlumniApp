@@ -1,4 +1,4 @@
-package com.example.enes.alumniapp.model;
+package com.example.enes.alumniapp.Student;
 
 /**
  * Created by Enes on 6.1.2017.
@@ -9,11 +9,13 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.TextView;
 
 import com.example.enes.alumniapp.Database.AlumniDB;
 import com.example.enes.alumniapp.Database.Helper;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class students extends AlumniDB{
@@ -28,14 +30,14 @@ public class students extends AlumniDB{
     private String lastname;
     private Integer birthday;
     private String place;
-
     private Integer phone;
     private String mail;
     private String addres;
     private String regTime;
+    private String sfaculty;
+    private String sdepartment;
 
-
-    public Integer getID(){return Helper.getUserID();}
+    public Integer getID(){return ID;}// Helper.getUserID()
     public void setID(Integer id){this.ID=id;}
 
     public Integer getStudentID(){return studentID;}
@@ -65,6 +67,12 @@ public class students extends AlumniDB{
     public String getRegTime(){return regTime;}
     public void setRegTime(String regTime){this.regTime=regTime;}
 
+    public String getSfaculty(){return sfaculty;}
+    public void setSfaculty(String sf){this.sfaculty=sf;}
+
+    public String getSdepartment(){return sdepartment;}
+    public void setSdepartment(String sd){this.sdepartment=sd;}
+
     //INSERT INTO TABLE STUDENT
     public void Insert(){
         try{
@@ -72,8 +80,20 @@ public class students extends AlumniDB{
             ContentValues values=new ContentValues();
             //values.put("ID",this.getID());
 
+            values.put("id",this.getID());
+            values.put("SID",this.getStudentID());
             values.put("firstname",this.getFirstname());
             values.put("lastname",this.getLastname());
+            values.put("birthday",this.getBirthday());
+            values.put("place",this.getPlace());
+            values.put("phone",this.getPhone());
+            values.put("adres",this.getAddres());
+            values.put("mail",this.getMail());
+            Date date = new Date();
+            values.put("register",date.toString());
+            values.put("sfaculty",this.getSfaculty());
+           // values.put("sdepartment",this.getSdepartment());
+
 
 //            this.getWritableDatabase().insertOrThrow(AlumniDB.CREATE_TB,"",values);//add database
             db.insert("ogrenciler","AlumniDB",values);
@@ -107,14 +127,25 @@ public class students extends AlumniDB{
         String[] strings=null;
         while (curso.moveToNext()){
             students st=new students(context);
-            st.setID(curso.getInt(0));
+            st.setStudentID(curso.getInt(0));
             st.setFirstname(curso.getString(1));
             st.setLastname(curso.getString(2));
             list.add(st);
         }
         return list;
     }
+    public  void list_allStudents(TextView textView){
+        Cursor cursor=this.getReadableDatabase().rawQuery("SELECT * FROM ogrenciler",null);
+        textView.setText("");
+        while(cursor.moveToNext()){
+            textView.append(cursor.getString(0)+" "+ cursor.getString(1)+" "+ cursor.getString(2)+" "+ cursor.getString(3)+"\n");
+        }
+    }
 
+    public void update_students(String old_username,String new_username){
+        this.getWritableDatabase().execSQL("UPDATE ogrenciler SET firstname='"+new_username+"' WHERE firstname='"+old_username+"'");
+
+    }
 
     public students getAllStudents(){
         String SelectAll="SELECT * FROM "+ TABLE_NAME;
@@ -122,7 +153,7 @@ public class students extends AlumniDB{
         Cursor cursor=db.rawQuery(SelectAll,null);
         if(cursor.moveToFirst()){
             do{
-                this.setID(cursor.getInt(0));
+                this.setStudentID(cursor.getInt(0));
                 this.setFirstname(cursor.getString(1));
                 this.setLastname(cursor.getString(2));
             }while (cursor.moveToNext());
@@ -131,4 +162,11 @@ public class students extends AlumniDB{
         cursor.close();
         return this;
     }
+    public void Delete(String username){
+
+        String query="Delete from ogrenciler where="+username;
+        SQLiteDatabase db=this.getWritableDatabase();
+        db.delete("ogrenciler",null,null);
+    }
+
 }

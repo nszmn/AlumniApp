@@ -36,62 +36,14 @@
         android:layout_alignParentEnd="true" />
 
     <TextView
-        android:text="Faculty Operations"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView11"
-        android:layout_below="@+id/btn_admin_students"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="22dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <Button
-        android:text="FACULTIES"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_admin_faculty"
-        android:onClick="btn_click"
-        android:layout_below="@+id/textView11"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:text="Department Operations"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView9"
-        android:layout_below="@+id/btn_admin_faculty"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="25dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <Button
-        android:text="DEPARTMENTS"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_admin_department"
-        android:onClick="btn_click"
-        android:layout_below="@+id/textView9"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
         android:text="Admin Operations"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_admin_department"
+        android:id="@+id/textView13"
+        android:layout_below="@+id/btn_admin_students"
+        android:layout_marginTop="15dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="30dp"
-        android:id="@+id/textView13"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
@@ -101,18 +53,37 @@
         android:layout_height="wrap_content"
         android:id="@+id/btn_admin_operation"
         android:onClick="btn_click"
+        android:layout_marginTop="37dp"
         android:layout_below="@+id/textView13"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:text="ADMIN OPERATIONS"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/btn_admin_operation"
+        android:id="@+id/btn_admin_op"
+        android:onClick="btn_click"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/btn_admin_operation"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:id="@+id/btn_admin_op"
-        android:onClick="btn_click"/>
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:text="Go to Search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_ASearch"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="59dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
 </RelativeLayout>

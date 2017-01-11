@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.enes.alumniapp.Database.Helper;
@@ -18,7 +19,7 @@ public class Login extends AppCompatActivity {
     public static String pass = "";
     private Button login;
 
-
+    TextView register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,14 @@ public class Login extends AppCompatActivity {
 
         final EditText username = (EditText) findViewById(R.id.edit_username);
         final EditText password = (EditText) findViewById(R.id.edit_password);
+        register=(TextView) findViewById(R.id.textREGISTER);
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent reg=new Intent(Login.this,AdminRegistration.class);
+                startActivity(reg);
+            }
+        });
 
 
         login = (Button) findViewById(R.id.btn_login);
@@ -40,14 +49,14 @@ public class Login extends AppCompatActivity {
                 admin result=obj.Login(uName,pass);
                 if(result==null){
                     Toast.makeText(Login.this,"Username or Password is not Correct",Toast.LENGTH_LONG).show();
-                    Intent intentMain=new Intent(Login.this,MainActivity.class);
-                    startActivity(intentMain);
+                    //Intent intentMain=new Intent(Login.this,MainActivity.class);
+                    //startActivity(intentMain);
 
                 }else{
                     int id=result.getId();
                     Helper.setUserID(id);
-                    Toast.makeText(Login.this,"Successful",Toast.LENGTH_SHORT).show();
-                    Intent intentMain=new Intent(Login.this,MainActivity.class);
+                    Toast.makeText(Login.this,"Successful"+" "+uName,Toast.LENGTH_SHORT).show();
+                    Intent intentMain=new Intent(Login.this,AdminPage.class);
                     startActivity(intentMain);
 
                 }
@@ -55,6 +64,8 @@ public class Login extends AppCompatActivity {
 
             }
         });
+
+
 
     }
 

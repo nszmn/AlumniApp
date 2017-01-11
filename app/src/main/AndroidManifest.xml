@@ -4,6 +4,7 @@
 
     <application
         android:allowBackup="true"
+
         android:icon="@mipmap/ic_yeni"
         android:label="@string/app_name"
         android:supportsRtl="true"
@@ -24,7 +25,6 @@
         <activity android:name=".AdminPage" />
         <activity android:name=".AddStudents" />
         <activity android:name=".Login" />
-        <activity android:name=".AddAdmin" />
         <activity android:name=".Operations.AdminOperations" />
         <activity android:name=".AdminRegistration" />
         <activity android:name=".Student.StudentOperations" />
@@ -37,7 +37,8 @@
             android:value="@integer/google_play_services_version" />
 
         <activity android:name=".facultyAdd" />
-        <activity android:name=".Department"></activity>
+        <activity android:name=".DepartmentAdd" />
+        <activity android:name=".StudentInfoAllList"></activity>
     </application>
 
 </manifest>

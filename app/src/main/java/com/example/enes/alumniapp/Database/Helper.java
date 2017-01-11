@@ -1,6 +1,6 @@
 package com.example.enes.alumniapp.Database;
 
-import com.example.enes.alumniapp.model.students;
+import com.example.enes.alumniapp.Student.students;
 
 import java.util.List;
 

@@ -15,23 +15,6 @@
 
     tools:context="com.example.enes.alumniapp.Search">
 
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/spinner_search_faculty"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:id="@+id/spinner_search_department"
-        android:layout_below="@+id/spinner_search_faculty"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
     <android.support.v7.widget.SearchView
         android:id="@+id/sv"
         android:layout_width="match_parent"
@@ -41,7 +24,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_toLeftOf="@+id/button2"
-        android:layout_toStartOf="@+id/button2"></android.support.v7.widget.SearchView>
+        android:layout_toStartOf="@+id/button2"
+        tools:ignore="UnknownId"></android.support.v7.widget.SearchView>
 
     <ListView
         android:id="@+id/lv"
@@ -50,14 +34,5 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/sv"></ListView>
-
-    <Button
-        android:text="Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button2"
-        android:layout_below="@+id/spinner_search_department"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

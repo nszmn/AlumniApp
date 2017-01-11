@@ -10,11 +10,14 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.enes.alumniapp.Database.AlumniDB.DbAdapter;
+import com.example.enes.alumniapp.Database.AlumniDB;
+
 
 import java.util.ArrayList;
 
 public class facultyAdd extends AppCompatActivity {
+
+    private String[] faculty={"ENGINEERING","EDUCATION","ECONOMY"};
 
     Spinner sp;
     EditText name;
@@ -37,10 +40,12 @@ public class facultyAdd extends AppCompatActivity {
         ret=(Button)findViewById(R.id.btn_FacultyLis);
 
         //Adapter
-        adapter=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,names);// simple_spinner_item_1
-
-        final DbAdapter db;
-        db = new DbAdapter(this);
+        //adapter=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,names);// simple_spinner_item_1
+        adapter=new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,faculty);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sp.setAdapter(adapter);
+        final AlumniDB.DBFACULTYAdapter db;
+        db = new AlumniDB.DBFACULTYAdapter(this);
 
         save.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,7 +54,7 @@ public class facultyAdd extends AppCompatActivity {
                 //open
                 db.openDB();
 
-                long result=db.add(name.getText().toString());
+                long result=db.addFaculty(name.getText().toString());
                 if(result != 0){
                     name.setText("");
                     Toast.makeText(getApplicationContext(),"SAVED",Toast.LENGTH_SHORT).show();
@@ -66,7 +71,6 @@ public class facultyAdd extends AppCompatActivity {
         ret.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 // clear
                 names.clear();
                 //open
@@ -77,13 +81,11 @@ public class facultyAdd extends AppCompatActivity {
                     String name=cursor.getString(1);
                     names.add(name);
                 }
-
                 //close
                 db.closeDB();
 
                 //Set it to spinner
                 sp.setAdapter(adapter);
-
             }
         });
     }

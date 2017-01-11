@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -17,12 +16,8 @@ import android.widget.Toast;
 import com.example.enes.alumniapp.Database.CustomAdapter;
 import com.example.enes.alumniapp.Database.DatabaseAdapter;
 import com.example.enes.alumniapp.Database.Planet;
-import com.example.enes.alumniapp.Student.ListStudents;
-import com.example.enes.alumniapp.Database.Helper;
-import com.example.enes.alumniapp.model.students;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Search extends AppCompatActivity {
 
@@ -32,13 +27,19 @@ public class Search extends AppCompatActivity {
     Button saveBtn,retrieveBtn,aa;
     CustomAdapter adapter;
     ArrayList<Planet> planets=new ArrayList<>();
+
+    Spinner spDepartment,spFaculty;
+
+
+    ArrayList<String> departments=new ArrayList<String>();
+    ArrayList<String> facultyList=new ArrayList<String>();
+    ArrayAdapter<String> adapterF,adapterD;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-
-
-
 
 
         lv= (ListView) findViewById(R.id.lv);
@@ -63,7 +64,6 @@ public class Search extends AppCompatActivity {
         });
 
     }
-
 
 
     private void displayDialog()
